@@ -39,7 +39,7 @@ help with the poverty in the world.
 You can find guides on how to get into open source development by visiting
 <a href="https://opensource.com/resources/what-open-source">what is open source</a>
 
-## how do i help?
+## How do i help?
 You can help by cloning the repo and adding in features you think will help
 the development of the site, the open source community is an amazing place, and
 we as developers can create amazing things, so lets build something together for good!
