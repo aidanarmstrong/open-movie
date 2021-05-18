@@ -37,7 +37,7 @@ Open movie is a free open source software as a service streaming site designed t
 help with the poverty in the world.
 
 You can find guides on how to get into open source development by visiting
-<a href="https://opensource.com/resources/what-open-source">what is open source</a>
+<a href="https://opensource.com/resources/what-open-source">what is open source</a>.
 
 ## How do i help?
 You can help by cloning the repo and adding in features you think will help
