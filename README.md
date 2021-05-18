@@ -1,71 +1,45 @@
-# Getting Started with Create React App
+# Open Movie 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Open Source Streaming site for the less fortunate.
 
-## Available Scripts
+## Why Open Source
 
-In the project directory, you can run:
+This project was thought to bring a group of talented developers 
+together to create something amazing without profit or large greedy earnings
+from big tech.
 
-### `yarn start`
+We decided that an Open Source streaming platform application could have a really
+big impact on people who are far less fortunate than our community, 
+as we have luxuries that we take for granted. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A lot of people in the world do not have access to the internet, and a lot 
+of people who do can not afford all the movie streaming sites that charge money per month 
+which all add up to be quite expensive for the lower income households.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## What does open movie provide?
+Open movie provides a streaming service film and television shows platform for
+everyone around the world and especially the lower class income households.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+During the 2020 global COVID19 pandemic I was distressed in cable and satellite 
+televisions repeating the same films and tv shows through and still continue to repeat 
+without the individuals being able to choose the shows or films that they want to choose.
 
-### `yarn build`
+That is why in May 2021 we decided to create open-movie.org the first real OpenSource
+streaming platform designed to rid the lower income households of the forced to watch the
+same thing over and over feeling like you are in a "groundhog day".
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How does it work?
+Open movie is fully developed by developers all around the world with the 
+idea to create something bigger than ourselves during the times of need.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open movie is a free open source software as a service streaming site designed to be
+help with the poverty in the world.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can find guides on how to get into open source development by visiting
+<a href="https://opensource.com/resources/what-open-source">what is open source</a>
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# open-movie
+## how do i help?
+You can help by cloning the repo and adding in features you think will help
+the development of the site, the open source community is an amazing place, and
+we as developers can create amazing things, so lets build something together for good!
