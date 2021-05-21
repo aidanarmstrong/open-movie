@@ -1,51 +1,55 @@
-import React, {useEffect, useState} from "react";
-import Movie from "./movie.screen";
-import {setMovies} from '../actions/movie.actions';
+import React, {useEffect} from "react";
+// import Movie from "./movie.screen";
 import {useDispatch, useSelector} from "react-redux";
 import {Spinner} from "react-bootstrap";
+import {getMovies} from "../api/movies.api";
+
+import MovieReel from "../movie_reel.component";
 
 const Dashboard = () => {
-
-    // const API_KEY = "b04a00192fa1aa4a5944c7d44718f987"
-    const API_KEY = ""
-    const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" + API_KEY + "&page=1";
-
+    const {REACT_APP_API_KEY } = process.env;
+    // const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" + REACT_APP_API_KEY ;
+    const FEATURED_API = "https://api.themoviedb.org/3/trending/all/day?api_key=" + REACT_APP_API_KEY
+    const movies_trending = useSelector((state) => state.movies );
+    // const movies_search = useSelector((state) => state.moviesSearch);
+    const loading = useSelector((state) => state.loading.loading );
     const dispatch = useDispatch();
 
-    const [ loading, setLoading ] = useState(false);
+    //todo: set up a get for each movie request in the api and pull them from hook use effect ;
 
     useEffect(async () => {
-       getMovies(FEATURED_API);
+        getMovies(FEATURED_API, dispatch);
     }, [])
 
-
-    // todo: move to api folder
-    const getMovies = ( API ) => {
-        setTimeout(() => {
-            fetch(API).then(res => res.json())
-                .then(data => {
-                    dispatch(setMovies(data.results));
-                    setLoading(true);
-                });
-        }, 500);
+    if(loading){
+        return (
+            <div className="loader-container">
+                <div className="loader">
+                    <Spinner animation="grow" role="status" className="loader">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                    <Spinner animation="grow" role="status" className="loader"/>
+                    <Spinner animation="grow" role="status" className="loader"/>
+                </div>
+            </div>
+        )
     }
-    return(
 
+    return(
         <div className="container-fluid">
-            <div className="row">
-                {
-                    loading ? (
-                        <Movie />
-                    )
-                    :
-                    (
-                        <div className="container">
-                            <Spinner animation="border" role="status">
-                                <span className="sr-only">Loading...</span>
-                            </Spinner>
-                        </div>
-                    )
-                }
+            <div className="container-fluid">
+                <div>
+                    <span className="popular">
+                        <h3>Trending</h3>
+                    </span>
+                    <MovieReel {...movies_trending}/>
+                </div>
+                {/*<div>*/}
+                {/*    <span className="popular">*/}
+                {/*        <h3>Popular</h3>*/}
+                {/*    </span>*/}
+                {/*    <MovieReel {...movies_search}/>*/}
+                {/*</div>*/}
             </div>
         </div>
     )

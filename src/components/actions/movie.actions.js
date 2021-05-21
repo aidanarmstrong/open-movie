@@ -1,3 +1,5 @@
+import {ActionType} from "./constant.actions";
+
 export const setMovies = (movies) => {
     return{
         type: ActionType.SET_MOVIES,
@@ -5,7 +7,9 @@ export const setMovies = (movies) => {
     }
 }
 
-export const ActionType = {
-    SET_MOVIES: "SET_MOVIES",
-
+export const setMoviesSearch = (movieSearch) => {
+    return{
+        type: ActionType.SET_MOVIES_SEARCH,
+        payload: movieSearch
+    }
 }

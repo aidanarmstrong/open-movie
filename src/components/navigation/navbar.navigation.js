@@ -1,35 +1,25 @@
-import React, {useEffect, useState} from 'react';
-import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import React, {useState} from 'react';
+import {Navbar, Nav, Form, FormControl} from 'react-bootstrap';
+import { useHistory } from 'react-router-dom'
 import {useDispatch} from "react-redux";
 import {setMovies} from "../actions/movie.actions";
 
 
 function Navigation() {
-
-    const API_KEY = "b04a00192fa1aa4a5944c7d44718f987"
-    const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&api_key=" + API_KEY + "&query=";
-
+    const dispatch = useDispatch();
     const [searchTerm, setSearchTerm] = useState('');
 
-    const dispatch = useDispatch();
-
-    // todo: move to api folder
-    const getMovies = ( API ) => {
-        fetch(API).then(res => res.json())
-            .then(data => {
-                dispatch(setMovies(data.results));
-            });
-    }
-
+    const history = useHistory();
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-
         if(searchTerm){
-            getMovies(SEARCH_API + searchTerm);
-            setSearchTerm('');
+            dispatch(setMovies([]));
+            history.push({
+                pathname: '/search',
+                search: '?query=' + searchTerm.replace(/\s/g, ''),
+            });
         }
-
     }
 
     const handleOnChange = (e) => {
