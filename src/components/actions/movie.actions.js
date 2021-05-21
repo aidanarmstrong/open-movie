@@ -5,7 +5,6 @@ export const setMovies = (movies) => {
     }
 }
 
-
 export const ActionType = {
     SET_MOVIES: "SET_MOVIES",
 

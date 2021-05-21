@@ -9,8 +9,6 @@ body {
 }
 .movie{
     width: 300px;
-    min-height: 520px;
-    max-height: 550px;
     margin: 10px ;
     position: relative;
     border-radius: 8px;
@@ -23,28 +21,31 @@ body {
 }
 .movie-info {
     display: flex;
-    padding: 15px;
     align-items: center;
     justify-content: space-between;
 }
 
-.movie-info h3{
+.movie-info h3, .movie-over h3 {
     font-size: 18px;
     margin: 0;
 }
+
 .movie-over{
-    background-color: rgba(0,0,0,0.7) ;
+    background-color: rgba(0,0,0,0.8) ;
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    /*border-top-right-radius: 3px;*/
+    /*border-top-left-radius: 3px;*/
     padding: 1.5rem;
     overflow: auto;
     max-height: 100%;
-    transform: translateY(100%);
+    transform: translateY(105%);
     transition: transform 0.4s ease-in-out;
+}
+.movie-overview{
+    margin-top: 5px;
 }
 
 .movie:hover{
@@ -53,6 +54,7 @@ body {
 .movie:hover .movie-over{
     transform: translateY(0%);
 }
+
 .search-bar{
     background: transparent!important;
     color: #FFFFFFAA !important;
