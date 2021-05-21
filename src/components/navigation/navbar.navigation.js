@@ -17,7 +17,7 @@ function Navigation() {
             dispatch(setMovies([]));
             history.push({
                 pathname: '/search',
-                search: '?query=' + searchTerm.replace(/\s/g, ''),
+                search: '?query=' + searchTerm.replace(/\s/g, '-'),
             });
         }
     }
