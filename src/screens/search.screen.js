@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import MovieSearch from "../search.component";
+import React from "react";
+import MovieSearch from "../components/search.component";
 import {getMovies} from "../api/movies.api";
 import {useDispatch} from "react-redux";
 

@@ -1,7 +1,7 @@
 import './App.css';
-import Root from "./components/navigation/root.navigation";
+import Root from "./navigation/root.navigation";
 import {Provider} from "react-redux";
-import store from "./components/store/store.store";
+import store from "./store/store.store";
 
 function App() {
   return (

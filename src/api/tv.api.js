@@ -1,12 +1,13 @@
 import axios from "axios";
-import {setMovies} from "../actions/movie.actions";
 import {setLoading} from "../actions/loading.action";
 
-export const getMovies = ( API, dispatch) => {
+import {setTvPopular} from "../actions/tv.actions";
+
+export const getTvPopular = ( API, dispatch) => {
 
     axios.get(API)
         .then(function (data){
-            dispatch(setMovies(data.data.results));
+            dispatch(setTvPopular(data.data.results));
             dispatch(setLoading(false))
         })
         .catch(function (error) {
@@ -15,8 +16,7 @@ export const getMovies = ( API, dispatch) => {
             setTimeout(() => {
                 dispatch(setLoading(false))
             }, 5000);
-            console.log(error);
+            console.log(error + "tv popular");
         })
-
 
 }

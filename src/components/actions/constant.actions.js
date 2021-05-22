@@ -1,5 +1,0 @@
-export const ActionType = {
-    SET_MOVIES: "SET_MOVIES",
-    SET_MOVIES_SEARCH: "SET_MOVIES_SEARCH",
-    SET_LOADING: "SET_LOADING",
-}

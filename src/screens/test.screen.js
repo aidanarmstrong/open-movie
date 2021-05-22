@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import moment from 'moment';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import noImageFound from "../assets/imgs/no-img-found.png";
 import loadingImage from "../assets/imgs/loading-img.png";
 
@@ -15,9 +15,8 @@ const config = {
     centerMode: false, // enable center mode
 };
 
-const MovieReel = (props) => {
-
-    const movies = props.movies;
+const Test = () => {
+    const movies = useSelector((state) => state.movies.movies );
     const [loading, setLoading] = useState(true)
     const {REACT_APP_IMG_API } = process.env;
     const getImage = (path) => {
@@ -76,4 +75,4 @@ const MovieReel = (props) => {
     )
 }
 
-export default MovieReel;
+export default Test;
