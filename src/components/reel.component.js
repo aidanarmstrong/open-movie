@@ -1,9 +1,7 @@
 import React from "react";
 import {isMobile} from 'react-device-detect';
-
 import Slider from "react-slick";
 import Movie from "./movie.component";
-
 
 function checkIsMobile() {
     if(isMobile){
@@ -24,6 +22,7 @@ const config = {
 const ContainerReel = ({dataList}) => {
 
     const movies = dataList;
+    // const loading = useSelector((state) => state.loading.loading);
 
     function movieList() {
         return movies.map((movie, key) => (
@@ -41,7 +40,7 @@ const ContainerReel = ({dataList}) => {
 
     return (
         <div className="mx-auto">
-            <h3>No movies found</h3>
+            <h3>Nothing found</h3>
         </div>
     )
 }

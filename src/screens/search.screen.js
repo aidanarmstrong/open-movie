@@ -15,6 +15,7 @@ const Search = (props) => {
     }
     return(
         <div className="container-fluid">
+            <h4>Searching for: {searchTerm}</h4>
             <div className="row">
                 <MovieSearch />
             </div>

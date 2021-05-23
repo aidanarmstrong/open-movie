@@ -19,7 +19,7 @@ const Movie = ({movie}) => {
     }
 
     return(
-        <div className="movie">
+        <div className="movie mx-auto">
             <img className="movie-img"
                  src={getImage(poster_path)}
                  onLoad={() => setLoading(false)}

@@ -7,11 +7,17 @@ const MovieSearch = () => {
     const moviesSearch = useSelector((state) => state.movies.movies );
 
     if(moviesSearch.length > 0){
-        return  moviesSearch.map((movie, key) => (
-            <div className="mx-auto" key={key}>
-               <Movie movie={movie}/>
-           </div>
-        ))
+        return  moviesSearch.map((movie, key) => {
+            console.log(movie.title);
+
+            if(movie.title || movie.overview){
+                return(
+                    <div className="mx-auto" key={key}>
+                        <Movie movie={movie}/>
+                    </div>
+                )
+            }
+        })
     }
 
     return (

@@ -10,10 +10,10 @@ export const getMovies = ( API, dispatch) => {
             dispatch(setLoading(false))
         })
         .catch(function (error) {
-            // handle error
             dispatch(setLoading(true))
             setTimeout(() => {
-                dispatch(setLoading(false))
+                // todo: set a screen for time out
+                // dispatch(setLoading(false))
             }, 5000);
             console.log(error + " search movies");
         })
@@ -27,10 +27,10 @@ export const getMoviesTrending = ( API, dispatch) => {
             dispatch(setLoading(false))
         })
         .catch(function (error) {
-            // handle error
             dispatch(setLoading(true))
             setTimeout(() => {
-                dispatch(setLoading(false))
+                // todo: set a screen for time out
+                // dispatch(setLoading(false))
             }, 5000);
             console.log(error + " trending movies");
         })
@@ -44,11 +44,10 @@ export const getMoviesPopular = ( API, dispatch) => {
             dispatch(setLoading(false))
         })
         .catch(function (error) {
-            // handle error
             dispatch(setLoading(true))
             setTimeout(() => {
-                // can set a malfunction error here
-                dispatch(setLoading(false))
+                // todo: set a screen for time out
+                // dispatch(setLoading(false))
             }, 5000);
             console.log(error + " popular movies");
         })

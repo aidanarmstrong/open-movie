@@ -14,9 +14,10 @@ export const getTvPopular = ( API, dispatch) => {
             // handle error
             dispatch(setLoading(true))
             setTimeout(() => {
+                // todo: set a screen for time out
                 dispatch(setLoading(false))
             }, 5000);
-            console.log(error + "tv popular");
+            console.log(error + " tv popular");
         })
 
 }
