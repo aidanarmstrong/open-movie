@@ -25,7 +25,7 @@ const LoadingReel = () => {
 
     function loading() {
         return loadingArray.map( (loader, key) => (
-            <div className="col-md-3">
+            <div className="col-md-3" key={key}>
                 <div className="movie" key={key}>
                     <img className="movie-img"
                          src={loadingImage}
