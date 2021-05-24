@@ -10,12 +10,17 @@ const Search = (props) => {
 
     const searchTerm = props.location.searchTerm ?? new URLSearchParams(props.location.search).get("query");
 
+    function formatTitleNoDash(title){
+        return title.replace(/-/g, ' ')
+    }
+
     if (searchTerm){
         getMovies(SEARCH_API + searchTerm, dispatch)
     }
+
     return(
         <div className="container-fluid">
-            <h4>Searching for: {searchTerm}</h4>
+            <h4>Searching for: {formatTitleNoDash(searchTerm)}</h4>
             <div className="row">
                 <MovieSearch />
             </div>

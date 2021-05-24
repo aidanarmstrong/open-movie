@@ -22,7 +22,6 @@ const config = {
 const ContainerReel = ({dataList}) => {
 
     const movies = dataList;
-    // const loading = useSelector((state) => state.loading.loading);
 
     function movieList() {
         return movies.map((movie, key) => (

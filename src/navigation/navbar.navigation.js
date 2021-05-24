@@ -28,16 +28,15 @@ function Navigation() {
 
     return(
         <Navbar variant="dark" expand="lg" style={styles.navbar}>
-            <Navbar.Brand href="./" className="text-white">
-                Open Movie
+            <Navbar.Brand href="/" className="text-white">
+                <h2>Open Movie</h2>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="./" className="text-white">Home</Nav.Link>
-                    <Nav.Link href="./" className="text-white">Films</Nav.Link>
-                    <Nav.Link href="./" className="text-white">Tv Shows</Nav.Link>
-                    <Nav.Link href="./" className="text-white">Profile</Nav.Link>
+                    <Nav.Link href="/" className="text-white">Home</Nav.Link>
+                    <Nav.Link href="./films" className="text-white">Films</Nav.Link>
+                    <Nav.Link href="./tv" className="text-white">Tv Shows</Nav.Link>
                 </Nav>
                 <Form onSubmit={handleOnSubmit}>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2 search-bar" onChange={handleOnChange}/>

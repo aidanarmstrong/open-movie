@@ -4,7 +4,6 @@ import ContainerReel from "../components/reel.component";
 import {getMoviesPopular, getMoviesTrending} from "../api/movies.api";
 import {getTvPopular} from "../api/tv.api";
 import {setLoading} from "../actions/loading.action";
-import LoadingReel from "../components/loadingReel.component";
 
 const Dashboard = () => {
     const {REACT_APP_API_KEY } = process.env;
@@ -16,8 +15,6 @@ const Dashboard = () => {
 
     const movies = useSelector((state) => state.movies);
     const tvShows = useSelector((state) => state.tvShows);
-    const loading = useSelector((state) => state.loading.loading);
-
 
     const fetchData = useCallback(async () => {
         await getMoviesTrending(TRENDING_MOVIES, dispatch);
@@ -30,32 +27,6 @@ const Dashboard = () => {
         fetchData().then(() => setLoading(false));
     }, [fetchData])
 
-    if(loading){
-        return (
-            <div className="container-fluid">
-                <div className="container-fluid">
-                    <div>
-                        <span className="category">
-                            <h3>Trending</h3>
-                        </span>
-                        <LoadingReel />
-                    </div>
-                    <div>
-                        <span className="category">
-                            <h3>Movies</h3>
-                        </span>
-                        <LoadingReel />
-                    </div>
-                    <div>
-                        <span className="category">
-                            <h3>Tv Shows</h3>
-                        </span>
-                        <LoadingReel />
-                    </div>
-                </div>
-            </div>
-        )
-    }
     return(
         <div className="container-fluid">
             <div className="container-fluid">
@@ -76,9 +47,6 @@ const Dashboard = () => {
                         <h3>Tv Shows</h3>
                     </span>
                     <ContainerReel dataList={tvShows.tvPopular}/>
-                </div>
-                <div>
-
                 </div>
             </div>
         </div>
