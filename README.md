@@ -35,15 +35,15 @@ which all add up to be quite expensive for the lower income households.
 
 
 ## What does open movie provide?
-Open movie provides a streaming service film and television shows platform for
-everyone around the world and especially the lower class income households.
+Open movie provides a streaming service for film and television shows for
+everyone around the world and especially the lower class income households to watch.
 
 During the 2020 global COVID19 pandemic I was distressed in cable and satellite 
-televisions repeating the same films and tv shows through and still continue to repeat 
-without the individuals being able to choose the shows or films that they want to choose.
+televisions repeating the same films and tv shows throughout and still continue to repeat 
+without the individuals being able to choose the shows or films that they want to watch.
 
 That is why in May 2021 we decided to create open-movie.org the first real OpenSource
-streaming platform designed to rid the lower income households of the forced to watch the
+streaming platform designed to help the lower income households, and not to be forced to watch the
 same thing over and over feeling like you are in a "groundhog day".
 
 ## How does it work?
@@ -54,9 +54,9 @@ Open movie is a free open source software as a service streaming site designed t
 help with the poverty in the world.
 
 You can find guides on how to get into open source development by visiting
-<a href="https://opensource.com/resources/what-open-source">what is open source</a>
+<a href="https://opensource.com/resources/what-open-source">what is open source</a>.
 
-## how do i help?
+## How do i help?
 You can help by cloning the repo and adding in features you think will help
 the development of the site, the open source community is an amazing place, and
 we as developers can create amazing things, so lets build something together for good!
