@@ -2,13 +2,30 @@
 
 The Open Source Streaming site for the less fortunate.
 
+## Cloning
+
+After cloning the repo, install all of the node modules by running 
+``` 
+npm install 
+```
+
+To start the project run: 
+
+```
+npm start
+````
+This repository is using [The Movie Database](https://www.themoviedb.org/). 
+You will need to create a free account and request for a developer API Key you
+will need to add your own .env file in the root directory of the repo and copy 
+the details from .env.example to add your API key.
+
 ## Why Open Source
 
 This project was thought to bring a group of talented developers 
 together to create something amazing without profit or large greedy earnings
 from big tech.
 
-We decided that an Open Source streaming platform application could have a really
+We decided that an Open Source streaming platform application could have a really 
 big impact on people who are far less fortunate than our community, 
 as we have luxuries that we take for granted. 
 
@@ -43,3 +60,4 @@ You can find guides on how to get into open source development by visiting
 You can help by cloning the repo and adding in features you think will help
 the development of the site, the open source community is an amazing place, and
 we as developers can create amazing things, so lets build something together for good!
+

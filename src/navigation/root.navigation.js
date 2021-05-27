@@ -5,6 +5,7 @@ import Search from "../screens/search.screen";
 import Nav from "./navbar.navigation";
 import Footer from "./footer.navigation";
 import Movie from "../screens/movie.screen";
+import FourOFour from "../screens/404.screen";
 
 const Root = () => {
     return (
@@ -15,7 +16,7 @@ const Root = () => {
                 <Route path='/search?query=' component={Search}/>
                 <Route path='/search' component={ (props) => <Search { ...props }/> } />
                 <Route path='/:category/:id/:title/:year' component={ (props) => <Movie/> } />
-                <Route path="*" component={() => (<h1>404</h1>)}/>
+                <Route path="*" component={FourOFour}/>
             </Switch>
             <Footer/>
         </Router>

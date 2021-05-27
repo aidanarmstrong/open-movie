@@ -154,6 +154,20 @@ body {
     width: 100%;
 }
 
+.movie-screen-info{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.movie-screen-info-date{
+    margin: 10px;
+}
+
+.light-text{
+    color: rgba(255,255,255, 0.5);
+}
+
 
 .f-18 {
     font-size: 18px;
@@ -191,16 +205,27 @@ footer{
     border-top: 1px solid #504e4e;
     margin-top: 50px;
 }
-li {
+footer li {
     list-style-type: none;
 }
 
-a {
+footer a {
     color: white;
 }
-a:hover{
+footer a:hover{
     color: #e2e2e2;
     text-decoration: none;
     transform: scale(1);
     animation: pulse 2s infinite;
+}
+
+
+/*  other */
+
+.mt-xxl-5 {
+    margin-top: 350px;
+}
+
+.mb-xxl-5{
+    margin-bottom: 350px;
 }

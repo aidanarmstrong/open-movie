@@ -55,10 +55,7 @@ const Movie = () => {
                 setLoading(false);
             })
             .catch(function (error) {
-                setTimeout(() => {
-                    // todo: set a screen for time out
-                    // dispatch(setLoading(false))
-                }, 5000);
+                setLoading(true);
                 console.log(error);
             })
     }
@@ -69,10 +66,7 @@ const Movie = () => {
                 setLoading(false);
             })
             .catch(function (error) {
-                setTimeout(() => {
-                    // todo: set a screen for time out
-                    // dispatch(setLoading(false))
-                }, 5000);
+                setLoading(true);
                 console.log(error);
             })
     }
@@ -113,6 +107,7 @@ const Movie = () => {
                         </div>
                         <div>
                             <h3>Cast</h3>
+                            loading...
                         </div>
 
                     </div>
@@ -130,7 +125,7 @@ const Movie = () => {
                         <img className="cast-member-img" src={getImage(person.profile_path)} alt={person.name}/>
                         <div className="cast-member-overflow mx-auto">
                             <h1>{person.character}</h1>
-                            <h2>{person.name}</h2>
+                            <h2 className="light-text">{person.name}</h2>
                         </div>
                     </div>
                 </div>
@@ -141,7 +136,7 @@ const Movie = () => {
     if(data){
         if(Object.keys(data).length > 0){
 
-            const {poster_path, overview, release_date} = data;
+            const {poster_path, overview, release_date, vote_average} = data;
             const title = data.title ? data.title : data.name ? data.name : "Unknown title";
 
             return(
@@ -149,9 +144,9 @@ const Movie = () => {
                     <div className="row mx-auto">
                         <div className="col-md-3 col-lg-3">
                             <div>
-                                <div className="movie-info">
+                                <div className="movie-screen-info">
                                     <h2>{title}</h2>
-                                    <h5>({moment(release_date).format('YYYY')})</h5>
+                                    <h5 className="movie-screen-info-date light-text">({moment(release_date).format('YYYY')})</h5>
                                 </div>
                                 <div className="movie-screen">
                                     <div className="movie-screen-img">
@@ -171,6 +166,12 @@ const Movie = () => {
                                 <Slider {...config}>
                                     {castList()}
                                 </Slider>
+                            </div>
+                            <div>
+                                <h3>Rating:</h3>
+                                <h4>{vote_average}
+                                    <span className="light-text"> / 10.0</span>
+                                </h4>
                             </div>
 
                         </div>
