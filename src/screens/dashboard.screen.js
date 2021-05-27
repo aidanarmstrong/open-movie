@@ -22,7 +22,6 @@ const Dashboard = () => {
         await getTvPopular(POPULAR_TV_SHOWS, dispatch);
     }, [TRENDING_MOVIES, POPULAR_MOVIES, POPULAR_TV_SHOWS, dispatch])
 
-
     useEffect( () => {
         fetchData().then(() => setLoading(false));
     }, [fetchData])

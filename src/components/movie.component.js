@@ -8,12 +8,12 @@ const Movie = ({movie}) => {
     const history = useHistory();
 
     const {REACT_APP_IMG_API } = process.env;
-    const {poster_path, overview, vote_average, release_date} = movie;
+    const {id, poster_path, overview, vote_average, release_date, isMovie} = movie;
     const [loading, setLoading] = useState(true)
 
 
     const title = movie.title ? movie.title : movie.name ? movie.name : "Unknown title";
-    const category = movie.media_type ? movie.media_type : 'tv';
+    const category = movie.isMovie ? "movie" : 'tv';
 
     function formatTitle(title){
        return title.replace(/\s/g, '-')
@@ -33,14 +33,11 @@ const Movie = ({movie}) => {
     return(
         <div className="movie mx-auto"
              onClick={() => {
-                 console.log(movie);
-                 // const image = getImage(poster_path);
                  movie.image = getImage(poster_path);
+                 setLoading(true);
                  history.push({
-                     pathname:'/'+ category + '/' + formatTitle(title) + '/' + moment(release_date).format('YYYY'),
-                     state: {
-                         movie: movie
-                     }
+                     pathname:'/'+ category + '/'  + id + '/' + formatTitle(title) + '/' + moment(release_date).format('YYYY'),
+                     state: {"isMovie": isMovie}
                  });
              }}
         >

@@ -158,6 +158,32 @@ body {
 .f-18 {
     font-size: 18px;
 }
+
+.cast-member-container{
+    margin-top: 5px;
+}
+.cast-member-img {
+    object-fit: cover;
+    height: 100px;
+    width: 100px!important;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+.cast-member-overflow {
+    margin: 15px;
+}
+.cast-member-overflow h1{
+    font-size: 14px;
+}
+.cast-member-overflow h2{
+    font-size: 12px;
+    font-weight: normal;
+}
+
 /*footer*/
 
 
