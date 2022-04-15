@@ -1,11 +1,12 @@
 import React, {useCallback, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import ContainerReel from "../components/reel.component";
-import {getMoviesPopular, getMoviesTrending} from "../api/movies.api";
-import {getTvPopular} from "../api/tv.api";
-import {setLoading} from "../actions/loading.action";
+import ContainerReel from "../../components/reel";
+import {getMoviesPopular} from "../../api/movies.api";
+import {getTrending} from '../../api';
+import {getTvPopular} from "../../api/tv.api";
+import {setLoading} from "../../actions/loading.action";
 
-const Dashboard = () => {
+const HomeScreen = () => {
     const {REACT_APP_API_KEY } = process.env;
 
     const TRENDING_MOVIES = "https://api.themoviedb.org/3/trending/all/day?api_key=" + REACT_APP_API_KEY;
@@ -17,7 +18,7 @@ const Dashboard = () => {
     const tvShows = useSelector((state) => state.tvShows);
 
     const fetchData = useCallback(async () => {
-        await getMoviesTrending(TRENDING_MOVIES, dispatch);
+        await getTrending(TRENDING_MOVIES, dispatch);
         await getMoviesPopular(POPULAR_MOVIES, dispatch);
         await getTvPopular(POPULAR_TV_SHOWS, dispatch);
     }, [TRENDING_MOVIES, POPULAR_MOVIES, POPULAR_TV_SHOWS, dispatch])
@@ -33,7 +34,7 @@ const Dashboard = () => {
                     <span className="category">
                         <h3>Trending</h3>
                     </span>
-                    <ContainerReel dataList={movies.moviesTrending}/>
+                    <ContainerReel dataList={movies.trending}/>
                 </div>
                 <div>
                      <span className="category">
@@ -52,4 +53,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default HomeScreen;

@@ -1,7 +1,7 @@
 import React from "react";
 import {isMobile} from 'react-device-detect';
 import Slider from "react-slick";
-import loadingImage from "../assets/imgs/loading-img.png";
+import loadingImage from "../../assets/imgs/loading-img.png";
 
 function checkIsMobile() {
     if(isMobile){

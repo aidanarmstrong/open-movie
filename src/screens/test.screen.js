@@ -28,36 +28,37 @@ const TestScreen = () => {
     const fetchData = useCallback(async () => {
         await  getShowDetails();
         await getShowCredits();
+
+        function getShowDetails(){
+            axios.get(Details_API)
+                .then(function (data){
+                    setData(data.data);
+                    setLoading(false);
+                })
+                .catch(function (error) {
+                    setTimeout(() => {
+                        // todo: set a screen for time out
+                        // dispatch(setLoading(false))
+                    }, 5000);
+                    console.log(error);
+                })
+        }
+        function getShowCredits(){
+            axios.get(Credit_Details_API)
+                .then(function (data){
+                    setCredits(data.data);
+                    setLoading(false);
+                })
+                .catch(function (error) {
+                    setTimeout(() => {
+                        // todo: set a screen for time out
+                        // dispatch(setLoading(false))
+                    }, 5000);
+                    console.log(error);
+                })
+        }
     }, [Details_API, Credit_Details_API])
 
-    function getShowDetails(){
-        axios.get(Details_API)
-            .then(function (data){
-                setData(data.data);
-                setLoading(false);
-            })
-            .catch(function (error) {
-                setTimeout(() => {
-                    // todo: set a screen for time out
-                    // dispatch(setLoading(false))
-                }, 5000);
-                console.log(error);
-            })
-    }
-    function getShowCredits(){
-        axios.get(Credit_Details_API)
-            .then(function (data){
-                setCredits(data.data);
-                setLoading(false);
-            })
-            .catch(function (error) {
-                setTimeout(() => {
-                    // todo: set a screen for time out
-                    // dispatch(setLoading(false))
-                }, 5000);
-                console.log(error);
-            })
-    }
 
     useEffect(() =>{
         fetchData().then();

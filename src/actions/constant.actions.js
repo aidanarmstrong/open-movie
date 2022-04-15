@@ -5,6 +5,9 @@ export const ActionType = {
     SET_MOVIES_TRENDING: "SET_MOVIES_TRENDING",
     SET_MOVIES_POPULAR: "SET_MOVIES_SEARCH",
 
+    // all
+    SET_TRENDING: "SET_TRENDING",
+
     // Tv
     SET_TV_POPULAR: "SET_TV_POPULAR",
 

@@ -1,7 +1,7 @@
 import React from "react";
 import {isMobile} from 'react-device-detect';
 import Slider from "react-slick";
-import Movie from "./movie.component";
+import Show from "../show";
 
 function checkIsMobile() {
     if(isMobile){
@@ -21,18 +21,18 @@ const config = {
 
 const ContainerReel = ({dataList}) => {
 
-    const movies = dataList;
+    const shows = dataList;
 
-    function movieList() {
-        return movies.map((movie, key) => (
-            <Movie movie={movie} key={key}/>
+    function showList() {
+        return shows.map((show, key) => (
+            <Show show={show} key={key}/>
         ))
     }
 
-    if(movies.length > 0){
+    if(shows.length > 0){
         return (
             <Slider {...config}>
-                {movieList()}
+                {showList()}
             </Slider>
         );
     }

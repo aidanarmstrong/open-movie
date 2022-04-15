@@ -1,24 +1,24 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import Movie from "./movie.component";
-import LoadingReel from "./loadingReel.component";
+import Movie from "../show";
+import LoadingReel from "../loadingReel";
 
-const MovieSearch = () => {
+const Search = () => {
 
-    const moviesSearch = useSelector((state) => state.movies.movies );
+    const showsSearch = useSelector((state) => state.movies.movies );
     const loading = useSelector((state) => state.loading.loading);
 
     if(loading){
         return <LoadingReel />
     }
 
-    if(moviesSearch.length > 0){
-        return  moviesSearch.map( (movie, key) => {
+    if(showsSearch.length > 0){
+        return  showsSearch.map( (show, key) => {
 
-            if(movie.title || movie.overview){
+            if(show.title || show.overview){
                 return(
                     <div className="mx-auto" key={key}>
-                        <Movie movie={movie}/>
+                        <Movie show={show}/>
                     </div>
                 )
             }
@@ -33,4 +33,4 @@ const MovieSearch = () => {
     )
 }
 
-export default MovieSearch;
+export default Search;

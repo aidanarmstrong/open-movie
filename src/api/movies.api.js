@@ -12,15 +12,7 @@ const checkIsMovie = (data) => {
 export const getMovies = ( API, dispatch) => {
     axios.get(API)
         .then(function (data){
-
-            data.data.results.forEach(function (response){
-                if(response.media_type === "tv"){
-                    response.isMovie = false;
-                }else if(response.media_type === "movie"){
-                    response.isMovie = true;
-                }
-            });
-            console.log(data.data.results);
+            checkIsMovie(data);
             dispatch(setMovies(data.data.results));
             dispatch(setLoading(false))
         })

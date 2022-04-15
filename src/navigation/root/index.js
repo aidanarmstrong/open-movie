@@ -1,21 +1,21 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Dashboard from "../screens/dashboard.screen";
-import Search from "../screens/search.screen";
-import Nav from "./navbar.navigation";
-import Footer from "./footer.navigation";
-import Movie from "../screens/movie.screen";
-import FourOFour from "../screens/404.screen";
+import Home from "../../screens/home";
+import Search from "../../screens/search";
+import Nav from "../navbar";
+import Footer from "../footer";
+import Show from "../../screens/show";
+import FourOFour from "../../screens/404";
 
 const Root = () => {
     return (
         <Router>
             <Nav/>
             <Switch>
-                <Route path='/' exact component={Dashboard}/>
+                <Route path='/' exact component={Home}/>
                 <Route path='/search?query=' component={Search}/>
                 <Route path='/search' component={ (props) => <Search { ...props }/> } />
-                <Route path='/:category/:id/:title/:year' component={ (props) => <Movie/> } />
+                <Route path='/:category/:id/:title/:year' component={ (props) => <Show/> } />
                 <Route path="*" component={FourOFour}/>
             </Switch>
             <Footer/>

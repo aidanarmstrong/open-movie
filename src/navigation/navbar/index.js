@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Navbar, Nav, Form, FormControl} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
 import {useDispatch} from "react-redux";
-import {setMovies} from "../actions/movie.actions";
+import {setMovies} from "../../actions/movie.actions";
 
 
 function Navigation() {

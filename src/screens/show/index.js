@@ -1,8 +1,8 @@
 import React, {useCallback, useEffect, useState} from "react";
-import {useParams, useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import axios from "axios";
-import loadingImage from "../assets/imgs/loading-img.png";
-import noImageFound from "../assets/imgs/no-img-found.png";
+import loadingImage from "../../assets/imgs/loading-img.png";
+import noImageFound from "../../assets/imgs/no-img-found.png";
 import moment from "moment";
 import Slider from "react-slick";
 import {isMobile} from "react-device-detect";
@@ -14,7 +14,11 @@ function checkIsMobile() {
     return 9
 }
 
-const Movie = () => {
+const ShowScreen = () => {
+
+    const [data, setData] = useState([]);
+    const [credits, setCredits] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     const config = {
         dots: false,
@@ -25,54 +29,46 @@ const Movie = () => {
         centerMode: false, // enable center mode
     };
 
-    const {id, title, category} = useParams();
+    const {category, id, title} = useParams();
     const {REACT_APP_API_KEY, REACT_APP_IMG_API} = process.env;
-    const location = useLocation();
 
-    const getDetailsApi = (id, apiKey) => {
-        if(!location.state.isMovie){
-            return "https://api.themoviedb.org/3/tv/" + id + "?api_key=" + apiKey
-        }
-        return "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + apiKey
-    }
-
-    const Details_API = getDetailsApi(id, REACT_APP_API_KEY);
-    const Credit_Details_API = "https://api.themoviedb.org/3/" + category + "/" + id +"/credits?api_key=" + REACT_APP_API_KEY;
-    const [data, setData] = useState([]);
-    const [credits, setCredits] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const Details_API = `https://api.themoviedb.org/3/${category}/${id}?api_key=${REACT_APP_API_KEY}`
+    const Credit_Details_API = `https://api.themoviedb.org/3/${category}/${id}/credits?api_key=${REACT_APP_API_KEY}`;
 
 
     const fetchData = useCallback(async () => {
-        await  getShowDetails(Details_API);
-        await getShowCredits(Credit_Details_API);
-    }, [Details_API, Credit_Details_API])
 
-    function getShowDetails(API){
-        axios.get(API)
-            .then(function (data){
-                setData(data.data);
-                setLoading(false);
-            })
-            .catch(function (error) {
-                setLoading(true);
-                console.log(error);
-            })
-    }
-    function getShowCredits(API){
-        axios.get(API)
-            .then(function (data){
-                setCredits(data.data);
-                setLoading(false);
-            })
-            .catch(function (error) {
-                setLoading(true);
-                console.log(error);
-            })
-    }
+        await getShowCredits(Credit_Details_API);
+        await getShowDetails(Details_API);
+
+        function getShowDetails(API){
+            axios.get(API)
+                .then(function (data){
+                    category === 'movie' ?  data.isMovie = true :  data.isMovie = false;
+                    setData(data.data);
+                    setLoading(false);
+                })
+                .catch(function (error) {
+                    setLoading(true);
+                    console.log(error);
+                })
+        }
+        function getShowCredits(API){
+            axios.get(API)
+                .then(function (data){
+                    setCredits(data.data);
+                    setLoading(false);
+                })
+                .catch(function (error) {
+                    setLoading(true);
+                    console.log(error);
+                })
+        }
+    
+    }, [Credit_Details_API, Details_API, category])
 
     useEffect(() =>{
-        fetchData().then();
+        fetchData();
     }, [fetchData])
 
 
@@ -131,6 +127,9 @@ const Movie = () => {
                 </div>
             ))
         }
+        return (
+            <p>No cast has been found.</p>
+        )
     }
 
     if(data){
@@ -157,9 +156,9 @@ const Movie = () => {
                         </div>
                         <div className="col-md-9 col-lg-8 pl-5">
                             <div style={{width: '100%'}}>
-                                <h2>Description</h2>
+                                <h2>Overview</h2>
                                 <abbr/>
-                                <p className="f-18">{overview}</p>
+                                <p className="f-18">{overview ? overview : "No overview found"}</p>
                             </div>
                             <div>
                                 <h3>Cast</h3>
@@ -184,4 +183,4 @@ const Movie = () => {
     return <div/>
 }
 
-export default Movie;
+export default ShowScreen;
