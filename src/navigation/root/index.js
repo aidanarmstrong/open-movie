@@ -17,9 +17,9 @@ const Root = () => {
             <Switch>
                 <Route path='/' exact component={Home}/>
                 <Route path='/search?query=' component={Search}/>
-                <Route path='/films' component={Films}/>
-                <Route path='/tv' component={TvShows}/>
-                <Route path='/search' component={ (props) => <Search { ...props }/> } />
+                <Route path='/films/' component={Films}/>
+                <Route path='/tvshows/' component={TvShows}/>
+                <Route path='/search/' component={ (props) => <Search { ...props }/> } />
                 <Route path='/:category/:id/:title/:year' component={ (props) => <Show/> } />
                 <Route path="*" component={FourOFour}/>
             </Switch>
