@@ -1,24 +1,24 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import Movie from "../show";
+import Show from "../show";
 import LoadingReel from "../loadingReel";
 
-const Search = () => {
+const TvShows = () => {
 
-    const showsSearch = useSelector((state) => state.movies.trending );
+    const tvShows = useSelector((state) => state.tvShows.tvPopular);
     const loading = useSelector((state) => state.loading.loading);
 
     if(loading){
         return <LoadingReel />
     }
-
-    if(showsSearch.length > 0){
-        return  showsSearch.map( (show, key) => {
+    
+    if(tvShows.length > 0){
+        return  tvShows.map( (show, key) => {
 
             if(show.title || show.overview){
                 return(
                     <div className="mx-auto" key={key}>
-                        <Movie show={show}/>
+                        <Show show={show}/>
                     </div>
                 )
             }
@@ -33,4 +33,4 @@ const Search = () => {
     )
 }
 
-export default Search;
+export default TvShows;

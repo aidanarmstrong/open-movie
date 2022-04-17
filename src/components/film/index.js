@@ -3,17 +3,17 @@ import {useSelector} from "react-redux";
 import Movie from "../show";
 import LoadingReel from "../loadingReel";
 
-const Search = () => {
+const Films = () => {
 
-    const showsSearch = useSelector((state) => state.movies.trending );
+    const films = useSelector((state) => state.movies.moviesPopular);
     const loading = useSelector((state) => state.loading.loading);
 
     if(loading){
         return <LoadingReel />
     }
 
-    if(showsSearch.length > 0){
-        return  showsSearch.map( (show, key) => {
+    if(films.length > 0){
+        return  films.map( (show, key) => {
 
             if(show.title || show.overview){
                 return(
@@ -33,4 +33,4 @@ const Search = () => {
     )
 }
 
-export default Search;
+export default Films;

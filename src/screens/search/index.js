@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "../../components/search";
-import {getMovies} from "../../api/movies.api";
+import {getShowsSearched} from "../../api";
 import {useDispatch} from "react-redux";
 
 const SearchScreen = (props) => {
@@ -11,12 +11,13 @@ const SearchScreen = (props) => {
     const searchTerm = props.location.searchTerm ?? new URLSearchParams(props.location.search).get("query");
 
     function formatTitleNoDash(title){
-        return title.replace(/-/g, ' ')
+        return title.replace(/-/g, ' ');
     }
 
     if (searchTerm){
-        getMovies(SEARCH_API + searchTerm, dispatch)
+        getShowsSearched(SEARCH_API + searchTerm, dispatch);
     }
+
 
     return(
         <div className="container-fluid">

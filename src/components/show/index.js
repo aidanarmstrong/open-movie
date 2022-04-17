@@ -33,12 +33,11 @@ const Movie = ({show}) => {
     return(
         <div className="movie mx-auto"
              onClick={() => {
-                //  setLoading(true);
-                 console.log(category);
-                //  history.push({
-                //      pathname:'/'+ category + '/'  + id + '/' + formatTitle(title) + '/' + moment(release_date).format('YYYY'),
-                //      state: {"isMovie": isMovie}
-                //  });
+                 setLoading(true);
+                 history.push({
+                     pathname:'/'+ category + '/'  + id + '/' + formatTitle(title) + '/' + moment(release_date).format('YYYY'),
+                     state: {"isMovie": isMovie}
+                 });
              }}
         >
             <img className="movie-img"
