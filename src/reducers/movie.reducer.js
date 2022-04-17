@@ -4,6 +4,7 @@ const initialState = {
     movies: [],
     moviesPopular: [],
     moviesTrending: [],
+    trending: []
 }
 export const movieReducer = (state = initialState, {type, payload}) => {
     switch (type){
@@ -15,6 +16,9 @@ export const movieReducer = (state = initialState, {type, payload}) => {
 
         case ActionType.SET_MOVIES_POPULAR:
             return {...state, moviesPopular: payload};
+            
+        case ActionType.SET_TRENDING:
+            return {...state, trending: payload};
 
         default:
             return state;
