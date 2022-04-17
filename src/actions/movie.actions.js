@@ -20,3 +20,10 @@ export const setMoviesTrending = (movieTrending) => {
         payload: movieTrending
     }
 }
+
+export const setTrending = (trending) => {
+    return {
+        type: ActionType.SET_TRENDING,
+        payload: trending
+    }
+}
